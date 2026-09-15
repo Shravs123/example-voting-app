@@ -15,7 +15,7 @@ spec:
         app: result
     spec:
       containers:
-      - image: dockersamples/examplevotingapp_result
+      - image: asia-south1-docker.pkg.dev/gcp-demo-508702/voting-app/vote:81c9864288696a56c4533d94e511f0d5afbaecbf
         name: result
         ports:
         - containerPort: 80
