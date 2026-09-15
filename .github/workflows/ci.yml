@@ -42,7 +42,7 @@ jobs:
        docker push \
          ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.GAR_REPO }}/vote:${{ github.sha }}
    
-    - name: Build and Push Result Image
+   - name: Build and Push Result Image
      run: |
        docker build \
          -t ${{env.REGION}}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.GAR_REPO }}/result:${{ github.sha }} \
@@ -52,7 +52,7 @@ jobs:
          ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.GAR_REPO }}/result:${{ github.sha }}     
 
 
-    - name: Build and Push worker Image
+   - name: Build and Push worker Image
      run: |
        docker build \
          -t ${{env.REGION}}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.GAR_REPO }}/worker:${{ github.sha }} \
