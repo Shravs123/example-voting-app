@@ -32,3 +32,9 @@ resource "google_service_account_iam_member" "github_actions_wif" {
   member             = "principalSet://iam.googleapis.com/${google_iam_workload_identity_pool.github.name}/attribute.repository/Shravs123/example-voting-app"
 }
 
+resource "google_project_iam_member" "github_actions-artifact_registry-write" {
+  project = var.project-id
+  role = "roles/artifactregistry.writer"
+  member = "serviceAccount:${google_service_account.github-actions.email}"
+}
+
