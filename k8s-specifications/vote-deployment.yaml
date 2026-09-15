@@ -15,7 +15,7 @@ spec:
         app: vote
     spec:
       containers:
-      - image: asia-south1-docker.pkg.dev/gcp-demo-508702/voting-app/vote:81c9864288696a56c4533d94e511f0d5afbaecbf
+      - image: asia-south1-docker.pkg.dev/gcp-demo-508702/voting-app/vote:343220d0036f96c37dc899a9bc6a28760fd24b93
         name: vote
         ports:
         - containerPort: 80
