@@ -25,7 +25,7 @@ jobs:
      uses: google-github-actions/get-gke-credentials@v2
      with:
        cluster_name: demo-gke
-       location: asia-south1
+       location: asia-south1-a
 
    - name: Deploy kubernetes manifests
      run: |
