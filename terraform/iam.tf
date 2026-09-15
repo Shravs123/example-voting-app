@@ -33,8 +33,15 @@ resource "google_service_account_iam_member" "github_actions_wif" {
 }
 
 resource "google_project_iam_member" "github_actions-artifact_registry-write" {
-  project = var.project-id
-  role = "roles/artifactregistry.writer"
-  member = "serviceAccount:${google_service_account.github-actions.email}"
+  project = var.project_id
+  role    = "roles/artifactregistry.writer"
+  member  = "serviceAccount:${google_service_account.github_actions.email}"
 }
+
+resource "google_project_iam_member" "github_actions_container_developer" {
+  project = var.project_id
+  role    = "roles/container.developer"
+  member  = "serviceAccount:${google_service_account.github_actions.email}"
+}
+
 
