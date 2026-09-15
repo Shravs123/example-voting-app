@@ -26,3 +26,9 @@ resource "google_iam_workload_identity_pool_provider" "github" {
   }
 }
 
+resource "google_service_account_iam_member" "github_actions_wif" {
+  service_account_id = google_service_account.github_actions.name
+  role               = "roles/iam.workloadIdentityUser"
+  member             = "principalSet://iam.googleapis.com/${google_iam_workload_identity_pool.github.name}/attribute.repository/Shravs123/example-voting-app"
+}
+
